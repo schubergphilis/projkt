@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "projkt"
+version = "1.0.0"
+description = "Projkt is a command line application to bootstrap projects."
+authors = ["Egon Braun <ebraun@schubergphilis.com>"]
+readme = "README.md"
+packages = [
+    { include = "src/**/*.py" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+cement = {version="^3.0.10", extras=["colorlog", "tabulate"]}
+humanize = "^4.9.0"
+inflection = "^0.5.1"
+prompt-toolkit = "^3.0.46"
+yaspin = "^3.0.2"
+
+[tool.poetry.dev-dependencies]
+bandit = "^1.7.8"
+pre-commit = "^3.7.1"
+pre-commit-hooks = "^4.6.0"
+pytest = "^8.2.2"
+ruff = "^0.4.7"
+
+[tool.poetry.scripts]
+projkt = "src.commands.projkt.app:run"
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+tests = []
+skips = []
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
