@@ -4,13 +4,18 @@ version = "1.0.0"
 description = "Projkt is a command line application to bootstrap projects."
 authors = ["Egon Braun <ebraun@schubergphilis.com>"]
 readme = "README.md"
-packages = [
-    { include = "src/**/*.py" }
+include = [
+    { path = "src/templates/*", format = ["sdist", "wheel"] },
 ]
+packages = [
+    { include = "src/**/*.py" },
+]
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
 cement = {version="^3.0.10", extras=["colorlog", "tabulate"]}
+cookiecutter = "^2.6.0"
 humanize = "^4.9.0"
 inflection = "^0.5.1"
 prompt-toolkit = "^3.0.46"
