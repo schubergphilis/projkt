@@ -7,7 +7,7 @@ from inflection import titleize
 
 from ....util.terminal.prompt import Prompt
 from ....util.terminal.spinner import Spinner
-from ..defaults import DEFAULT_TEMPLATE_ARGUMENTS
+from ..defaults import DEFAULT_TEMPLATE_ARGUMENTS, DEFAULT_TEMPLATE_IGNORED_ARGUMENTS
 from ..exceptions import NotFoundAppError, RuntimeAppError
 
 
@@ -62,7 +62,11 @@ class NewController(Controller):
                 context = json.loads(f.read())
 
         with Prompt() as prompt:
-            for argument, _ in context.items():
+            for argument, value in context.items():
+                if argument in DEFAULT_TEMPLATE_IGNORED_ARGUMENTS:
+                    context[argument] = value
+                    continue
+
                 message = titleize(argument)
 
                 try:

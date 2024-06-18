@@ -24,3 +24,7 @@ DEFAULT_TEMPLATE_ARGUMENTS = {
         "validator": EmailValidator(),
     },
 }
+
+DEFAULT_TEMPLATE_IGNORED_ARGUMENTS = [
+    "_copy_without_render",
+]
