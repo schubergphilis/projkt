@@ -6,6 +6,7 @@ from .config import DEFAULT_CONFIG
 from .constants import APP_NAME
 from .controllers.about import AboutController
 from .controllers.base import BaseController
+from .controllers.new import NewController
 from .exceptions import AppError
 
 #
@@ -32,6 +33,7 @@ class ProjktApp(App):
         handlers = [
             BaseController,
             AboutController,
+            NewController,
         ]
 
         hooks = []
