@@ -2,6 +2,11 @@
 
 {{ cookiecutter.description }}
 
+## Contributing
+
+Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to
+this project.
+
 ## License
 
 Copyright (C) {% now "utc", "%Y" %}-present {{ cookiecutter.author }}
