@@ -1,0 +1,13 @@
+{
+  "project_name": "",
+  "project_slug": "",
+  "description": "",
+  "license": "",
+  "author": "",
+  "email": "",
+  "registry_url": "",
+  "source_code_url": "",
+  "_copy_without_render": [
+    ".github/workflows/pipeline.yml"
+  ]
+}
